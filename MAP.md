@@ -20,6 +20,9 @@
 - 本地预览：`python3 -m http.server` 后打开 http://localhost:8000
 - 检查：`node tests/check.js`（输出 OK 即通过）
 
-## 部署
-- GitHub Pages：仓库 Settings → Pages → main 分支根目录；DNS 加 CNAME 指向 `tst609370-create.github.io`
-- 或任意服务器 nginx/Caddy 静态目录，DNS 加 A 记录
+## 部署（正式：香港1区 103.185.248.205）
+- `deploy/server-install.sh`：服务器上 root 执行，从 GitHub raw 拉 index.html 到 /var/www/meiri-niugu，新增独立 nginx server 块（sites-available/meiri-niugu）和独立证书（cert-name meiri-niugu）。可重复执行，再跑一次即更新页面。同机还有 kf.每日牛股.vip（wxkf02 clawbot）、星海云支付，脚本不改它们。
+- 单行命令版放在项目文件 servers/meiri-niugu-deploy.cmd.txt
+- DNS：@ 和 www 的 A 记录 → 103.185.248.205
+- 改页面后的发布：推 main → 服务器重跑脚本
+- 仓库里的 CNAME 是 GitHub Pages 备用方案，当前未启用
