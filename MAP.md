@@ -1,6 +1,6 @@
 # MAP — 每日牛股落地页
 
-- 域名：每日牛股.公司（punycode：`xn--wgvo5ky7fvrq.xn--55qx5d`）
+- 域名：每日牛股.vip（punycode：`xn--wgvo5ky7fvrq.vip`）
 - 类型：纯静态单页，无构建步骤
 
 ## 目录
