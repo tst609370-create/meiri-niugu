@@ -11,7 +11,7 @@ TS=$(date +%Y%m%d%H%M%S)
 
 # 0. 前提：DNS 已指到本机，nginx 已在跑（与 wxkf02 脚本一致）
 for h in "$D" "$W"; do
-  ip=$(getent hosts "$h" | awk '{print $1}' | head -1)
+  ip=$(getent hosts "$h" 2>/dev/null | awk '{print $1}' | head -1 || true)
   [ "$ip" = "$MYIP" ] || { echo "DNS 还没生效：$h -> ${ip:-无}，先加 A 记录"; exit 1; }
 done
 command -v nginx >/dev/null || { echo "本机没有 nginx，已停止，未做任何修改"; exit 1; }
