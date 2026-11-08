@@ -1,5 +1,7 @@
 # MAP — 每日牛股落地页
 
+> **2026-11-08 起线上已不用本静态页**：每日牛股.vip 改为 clawbot 微信客服（wxkf02）的长期码域名，nginx（/etc/nginx/sites-available/meiri-niugu）反代 127.0.0.1:3001，根路径 302 到 /connect/open 显示临时码；后台地址 kf.每日牛股.vip。本仓库保留作备用落地页。
+
 - 域名：每日牛股.vip（punycode：`xn--wgvo5ky7fvrq.vip`）
 - 类型：纯静态单页，无构建步骤
 
